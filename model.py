@@ -1,3 +1,4 @@
+import torch
 from torch import nn
 from math import sqrt
 
@@ -22,6 +23,8 @@ class PositionalEmbeddings(nn.Module):
         self.max_len = max_len
         self.dropout = nn.Dropout(dropout)
         self.embeddings = nn.Embedding(max_len, d_model)
+        
+        pe=torch.zeros(max_len, d_model)
     
     def forward(self, x):
         pass
